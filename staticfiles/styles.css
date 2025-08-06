@@ -1,0 +1,11 @@
+footer {
+  background-color: #333;   /* Dark background */
+  padding: 15px 0;          /* Top and bottom padding */
+  text-align: center;       /* Center content */
+}
+
+footer marquee {
+  color: #fff;              /* White text */
+  font-size: 18px;          /* Larger text */
+  font-family: Arial, sans-serif; /* Clean font */
+}

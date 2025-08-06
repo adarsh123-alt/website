@@ -1,0 +1,54 @@
+/* Make carousel images same height & cover */
+.carousel-inner img {
+  height: 500px; /* classic hero height */
+  object-fit: cover; /* crop nicely */
+  border-radius: 8px; /* soft corners */
+}
+
+/* Add subtle shadow and border */
+.carousel {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Optional: fade effect instead of slide */
+.carousel-item {
+  transition: opacity 1s ease-in-out;
+}
+
+/* Controls: classic arrows */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%); /* white arrow */
+  width: 40px;
+  height: 40px;
+  background-size: 100% 100%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  filter: invert(60%); /* slight dark on hover */
+}
+
+/* Remove background behind arrows */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: none; /* Remove default icon */
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}
+
+.carousel-control-prev-icon {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L6.707 7l4.647 4.646a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l5 5a.5.5 0 0 1 0 .708l-5 5a.5.5 0 0 1-.708-.708L9.293 7 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}

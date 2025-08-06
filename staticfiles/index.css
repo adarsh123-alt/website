@@ -1,0 +1,41 @@
+/* Make sure all cards have same height if needed */
+.card {
+  height: 100%;
+  border: 1px solid #ddd; /* subtle border */
+  border-radius: 8px; /* soft corners */
+  overflow: hidden; /* clip image overflow */
+}
+
+/* Force image to classic size & cover card top */
+.card-img-top {
+  height: 200px; /* classic fixed height */
+  object-fit: cover; /* crop image nicely */
+  width: 100%; /* full width */
+  display: block; /* remove inline gap */
+}
+
+/* Optional: card body min height for equal cards */
+.card-body {
+  min-height: 150px; /* adjust as needed */
+}
+
+/* Button style for nice look */
+.btn-outline-secondary {
+  border-radius: 20px; /* pill buttons */
+  transition: all 0.3s;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Add nice shadow */
+.card {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}

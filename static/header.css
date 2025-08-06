@@ -1,0 +1,60 @@
+/* Classic navbar background and border */
+.navbar {
+  background-color: #f8f9fa; /* Light gray background */
+  border-bottom: 1px solid #ddd; /* Subtle bottom border */
+  font-family: 'Georgia', serif; /* Classic serif font */
+}
+
+/* Brand styling */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 26px;
+  color: #333 !important;
+}
+
+/* Nav links basic style */
+.navbar-nav .nav-link {
+  color: #555 !important;
+  margin-right: 20px;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+/* Nav links hover style */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #000 !important;
+  border-bottom: 2px solid #333;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.dropdown-menu .dropdown-item {
+  color: #333;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #f1f1f1;
+  color: #000;
+}
+
+/* Search button classic style */
+.btn-outline-success {
+  border-color: #333;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline-success:hover {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+/* Navbar toggler icon */
+.navbar-toggler {
+  border-color: #333;
+}
