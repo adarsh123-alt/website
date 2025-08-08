@@ -17,9 +17,7 @@ import os
 DEBUG = os.getenv("DEBUG", "True") == "True"
 
 ALLOWED_HOSTS = [
-    'demo-1-vsmd.onrender.com',
-    'localhost',
-    '127.0.0.1'
+    'https://website-omh3.onrender.com'
 ]
 
 # Application definition
