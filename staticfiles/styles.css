@@ -9,3 +9,7 @@ footer marquee {
   font-size: 18px;          /* Larger text */
   font-family: Arial, sans-serif; /* Clean font */
 }
+.product-img {
+    height: 250px;
+    object-fit: cover; /* Keeps aspect ratio but crops overflow */
+  }

@@ -1,60 +1,84 @@
 {% extends "base.html" %}
-{% block title%} contact {%endblock %}
-{% block head %} 
-  <link rel="stylesheet" href="static/index1.css">
-  <link rel="script" href="static/script.js">
-{% endblock%}
-{% block body%}
+{% block title %}Contact{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="static/index1.css">
+<script src="static/script.js" defer></script>
+{% endblock %}
+
+{% block body %}
 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="10000">
       <img src="static/telephone.jpg" class="d-block w-100" alt="...">
     </div>
   </div>
-  <h2> Contact us </h2>
-  <form method="POST" actin="/contact" class="row g-3 needs-validation" novalidate>
-      {% csrf_token %}
+</div>
+
+<div class="container py-5">
+  <h2 class="mb-4 text-center">Contact Us</h2>
+
+  <!-- Contact Form -->
+  <form method="POST" action="/contact" class="row g-3 needs-validation" novalidate>
+    {% csrf_token %}
+
     <div class="col-md-4">
-      <label for="validationCustom02" class="form-label"> Name</label>
+      <label for="name" class="form-label">Name</label>
       <input type="text" class="form-control" id="name" name="name" required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
+      <div class="invalid-feedback">Please enter your name.</div>
     </div>
+
     <div class="col-md-4">
-      <label for="validationCustomUsername" class="form-label">Gmail</label>
+      <label for="email" class="form-label">Gmail</label>
       <div class="input-group has-validation">
-        <span class="input-group-text" id="inputGroupPrepend">@</span>
-        <input type="text" class="form-control" name="email" id="email"
-          aria-describedby="inputGroupPrepend" required>
-        <div class="invalid-feedback">
-          Please enter Eamil
-        </div>
+        <span class="input-group-text">@</span>
+        <input type="email" class="form-control" name="email" id="email" required>
+        <div class="invalid-feedback">Please enter a valid email address.</div>
       </div>
     </div>
+
     <div class="col-md-4">
-      <label for="validationCustom01" class="form-label">Phone Number</label>
-      <input type="text" class="form-control" id="phone" name="phone" required>
-      <div class="invalid-feedback">
-        Please provide a valid Phone Number
-      </div>
+      <label for="phone" class="form-label">Phone Number</label>
+      <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]{10}" required>
+      <div class="invalid-feedback">Please provide a valid 10-digit phone number.</div>
     </div>
+
     <div class="col-md-4">
-      <label for="validationCustom01" class="form-label">City Name</label>
+      <label for="city" class="form-label">City Name</label>
       <input type="text" class="form-control" id="city" name="city" required>
-      <div class="invalid-feedback">
-        Please provide a valid city.
-      </div>
+      <div class="invalid-feedback">Please provide your city.</div>
     </div>
+
     <div class="col-md-4">
-      <label for="validationCustom01" class="form-label">State Name </label>
+      <label for="state" class="form-label">State Name</label>
       <input type="text" class="form-control" id="state" name="state" required>
-      <div class="invalid-feedback">
-        Please provide a valid State.
-      </div>
+      <div class="invalid-feedback">Please provide your state.</div>
     </div>
-    <div class="col-12">
-      <button class="btn btn-primary" type="submit">Submit </button>
+
+    <div class="col-12 text-center">
+      <button class="btn btn-primary px-4" type="submit">Submit</button>
     </div>
   </form>
+</div>
+
+<!-- Form validation & success popup -->
+<script>
+(function () {
+  'use strict';
+  const forms = document.querySelectorAll('.needs-validation');
+
+  Array.from(forms).forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      } else {
+        event.preventDefault(); // prevent immediate submission for popup
+        alert("✅ Request Sent Successfully!");
+        form.submit(); // now actually submit
+      }
+      form.classList.add('was-validated');
+    }, false);
+  });
+})();
+</script>
 {% endblock %}
