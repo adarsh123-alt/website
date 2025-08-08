@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-^fkypkvn#e7!_r^lhtb)y$^-toggbtaaeb@*#0lsix0$in^rzt
 # DEBUG
 import os
 
-DEBUG = os.getenv("DEBUG", "True") == "True"
+DEBUG = os.getenv("DEBUG", "True") == "false"
 
 ALLOWED_HOSTS = [
     'website-omh3.onrender.com',
